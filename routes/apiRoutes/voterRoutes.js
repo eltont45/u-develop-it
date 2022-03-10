@@ -98,11 +98,12 @@ router.delete('/voter/:id', (req, res) => {
             });
         } else {
             res.json({
-                message: 
-                
-            })
+                message: 'deleted',
+                changes: result.affectedRows,
+                id: req.params.id
+            });
         }
-    })
-})
+    });
+});
 
 module.exports = router;
